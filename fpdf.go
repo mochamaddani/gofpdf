@@ -2556,7 +2556,7 @@ func (f *Fpdf) SplitLines(txt []byte, w float64) [][]byte {
 				}
 				sep = i
 			} else {
-				i = sep + 1
+				i = sep
 			}
 			lines = append(lines, s[j:sep])
 			sep = -1
