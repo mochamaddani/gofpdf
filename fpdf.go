@@ -2546,7 +2546,7 @@ func (f *Fpdf) SplitLines(txt []byte, w float64) [][]byte {
 	for i < nb {
 		c := s[i]
 		l += cw[c]
-		if c == ' ' || c == '\t' || c == '\n' {
+		if c == '\t' || c == '\n' {
 			sep = i
 		}
 		if c == '\n' || l > wmax {
@@ -2704,7 +2704,7 @@ func (f *Fpdf) MultiCell(w, h float64, txtStr, borderStr, alignStr string, fill 
 			}
 			continue
 		}
-		if c == ' ' || isChinese(c) {
+		if isChinese(c) {
 			sep = i
 			ls = l
 			ns++
