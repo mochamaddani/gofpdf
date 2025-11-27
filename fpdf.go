@@ -2704,11 +2704,14 @@ func (f *Fpdf) MultiCell(w, h float64, txtStr, borderStr, alignStr string, fill 
 			}
 			continue
 		}
-		if isChinese(c) {
+		if c == '\t' {
 			sep = i
 			ls = l
 			ns++
 		}
+		// if isChinese(c) {
+			
+		// }
 		if int(c) >= len(cw) {
 			f.err = fmt.Errorf("character outside the supported range: %s", string(c))
 			return
