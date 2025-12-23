@@ -2704,7 +2704,7 @@ func (f *Fpdf) MultiCell(w, h float64, txtStr, borderStr, alignStr string, fill 
 			}
 			continue
 		}
-		if c == '\t' {
+		if c == ' ' {
 			sep = i
 			ls = l
 			ns++
