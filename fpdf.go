@@ -2558,6 +2558,9 @@ func (f *Fpdf) SplitLines(txt []byte, w float64) [][]byte {
 			} else {
 				i = sep
 			}
+			if j == sep {
+				sep += 1
+			}
 			lines = append(lines, s[j:sep])
 			sep = -1
 			j = i
@@ -2744,6 +2747,9 @@ func (f *Fpdf) MultiCell(w, h float64, txtStr, borderStr, alignStr string, fill 
 						f.ws = 0
 					}
 					f.outf("%.3f Tw", f.ws*f.k)
+				}
+				if j == sep {
+					sep += 1
 				}
 				if f.isCurrentUTF8 {
 					f.CellFormat(w, h, string(srune[j:sep]), b, 2, alignStr, fill, 0, "")
